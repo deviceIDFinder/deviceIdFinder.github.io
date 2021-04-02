@@ -295,7 +295,7 @@
 					
 							<div class="app-icon">&nbsp;</div>
 						
-					<a href="https://getdeviceid.app.link/e/app" class="cta-button text-light">Get The App</a>
+					<a id="get-app-cta-button" href="https://getdeviceid.app.link/e/app" class="cta-button text-light">Get The App</a>
 				</form>
 			</div>
 		</div>
@@ -318,6 +318,21 @@
 				console.log(err);
 			}
 		);
+		document.getElementById("get-app-cta-button").onclick = function () {
+			var event_and_custom_data = {
+				"description": "CTA button clicked",
+				"revenue": 4
+			};
+			branch.logEvent(
+				"PURCHASE",
+				event_and_custom_data,
+				[],
+				"",
+				function(err) {
+					console.log(err);
+				}
+			);
+		};
 	</script>
 </body>
 </html>
