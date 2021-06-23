@@ -1,0 +1,165 @@
+body {
+  background-color: #FFFFFF;
+  margin: 0;
+}
+/* Elements */
+.card {
+  background-color: #FCFCFC;
+  width: 900px;
+  /* Natali check this */
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -moz-flex-direction: row;
+}
+#main-image {
+  width: 360px;
+  /* We should pick a "standard" nice round size for this. 521px seems arbitrary */
+  height: 360px;
+  /* ditto */
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/ac/b8/cf/acb8cf56-26f6-fbce-698a-019643b0a3a4/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/1024x1024bb.png);
+}
+#content-container {
+  position: relative;
+  float: right;
+  flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  -moz-flex: 1;
+  padding: 24px;
+}
+.app-title {
+  font-size: 14px;
+  line-height: 19px;
+  padding-bottom: 20px;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #CECECE;
+  text-transform: uppercase;
+}
+.card-title {
+  padding-top: 20px;
+  font-size: 32px;
+  line-height: 32px;
+}
+.app-content {
+  padding-top: 16px;
+}
+.input-container {
+  bottom: 10px;
+  left: 24px;
+  right: 24px;
+  top: 10px;
+}
+form>input {
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  -moz-flex: 1;
+  background-color: #FFFFFF;
+  border: 1px solid #979797;
+  border-radius: 2px;
+  font-size: 18px;
+  color: #444444;
+  line-height: 24px;
+  padding-left: 20px;
+}
+button {
+  background-color: #444444;
+  border: 1px solid #444444;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 27px;
+  cursor: pointer;
+}
+
+.input-label {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+/* Reusables */
+.center {
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: fixed;
+}
+.bold {
+  font-family: 'Open Sans', Helvetica, serif;
+  font-weight: 700
+}
+.light {
+  font-family: 'Open Sans', Helvetica, serif;
+  font-weight: 300;
+}
+.error {
+  color: #FF7878;
+}
+.flex {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.app {
+ &-btn {
+  width: 45%;
+  max-width: 160px;
+  color: #fff;
+  margin: 20px 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  &.blu {
+   background-color: #101010;
+   transition: background-color 0.25s linear;
+   &:hover {
+    background-color: #454545;
+   }
+  }
+  i {
+   width: 20%;
+   text-align: center;
+   font-size: 28px;
+   margin-right: 7px;
+  }
+  .big-txt {
+   font-size: 17px;
+   text-transform: capitalize;
+  }
+ }
+}
+#qr{
+  display: flex;
+}
+#store{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+#google_play{
+  float: right;
+  height: 60px;
+}
+#app_store{
+  float: right;
+  height: 60px;
+  margin-right: 10px;
+  width: 132px;
+}
