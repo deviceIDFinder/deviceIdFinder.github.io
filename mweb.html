@@ -110,7 +110,7 @@
       			'send_to': 'AW-431159830/sdydCJShnYACEJb0y80B',
       			'transaction_id': String(transaction_id)
   			});
-			fbq('track', 'Purchase', {currency: "USD", value: 4.00});
+			fbq('track', 'Purchase', {currency: "USD", value: 4.00}, {eventID: String(transaction_id)});
 		};
 	</script>
 </body>
