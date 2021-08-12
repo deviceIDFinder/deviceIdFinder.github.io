@@ -103,9 +103,10 @@
 	<script>
 		document.getElementById("get-app-cta-button").onclick = function () {
 			var transaction_id = (new Date()).getTime();
+			var revenue = Math.floor(Math.random() * 10);
 			var event_and_custom_data = {
 				"description": "CTA button clicked",
-				"revenue": 4,
+				"revenue": revenue,
 				"transaction_id": String(transaction_id)
 			};
 			branch.logEvent(
@@ -119,9 +120,10 @@
 			);
   			gtag('event', 'conversion', {
       			'send_to': 'AW-431159830/sdydCJShnYACEJb0y80B',
+			'value': revenue,
       			'transaction_id': String(transaction_id)
   			});
-			fbq('track', 'Purchase', {currency: "USD", value: 4.00}, {eventID: String(transaction_id)});
+			fbq('track', 'Purchase', {currency: "USD", value: revenue}, {eventID: String(transaction_id)});
 		};
 	</script>
 </body>
