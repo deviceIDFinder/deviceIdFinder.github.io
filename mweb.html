@@ -81,6 +81,7 @@
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="style.css">
+	<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="card center">
@@ -125,7 +126,7 @@
       			'transaction_id': String(transaction_id)
   			});
 			fbq('track', 'Purchase', {currency: "USD", value: revenue}, {eventID: String(transaction_id)});
-			twq('track', 'Purchase', {currency: "USD", value: revenue, num_items: '1', order_id: String(transaction_id)});
+			twttr.conversion.trackPid('o6pq9', { tw_sale_amount: revenue, tw_order_quantity: 1,  });
 		};
 	</script>
 </body>
