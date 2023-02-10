@@ -38,10 +38,24 @@
   }
 };
 
+
 branch.link(linkData, function(err, link) {
   console.log(link);
-  document.getElementById("custom_link").href = link;
+  if (err)
+  {
+    document.getElementById("errlbl").innerText="Error creating Link. Error: "+err;
+    document.getElementById("custom_link").innerHTML='';
+  }
+  else
+  {
+    document.getElementById("custom_link").href = link;
+    document.getElementById("custom_link").innerHTML=link;
+    document.getElementById("errlbl").innerText="Link Created Successfully."
+  }
+ 
+  
 });
+
 	</script>
 	<!-- Google init -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-405680301"></script>
@@ -188,6 +202,7 @@ branch.link(linkData, function(err, link) {
         <tr><td><a href='mobot_qr_code.jpeg'><img width='25%' height='25%' src='mobot_qr_code.jpeg'></a></td></tr><tr><td></td></tr>
         <tr><td><b>Dynamic Link (Created by SDK):</b></td></tr>
         <tr><td><a href='' id="custom_link">Dynamic Link</a></td></tr><tr><td></td></tr>
+        <tr><td><label id="errlbl"></label> </td></tr><tr><td></td></tr>
         
 </table>
 		<div id="content-container"></div>
