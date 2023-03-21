@@ -105,11 +105,13 @@ branch.link(linkData, function(err, link) {
 	fbq('track', 'PageView');
 	twq('track','PageView');
 	</script>
+ 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="style.css">
 	<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
 </head>
 <body>
+
 	<div class="card center"></div>
     <table>
         <tr><td></td></tr><tr><td></td></tr>
@@ -143,6 +145,12 @@ branch.link(linkData, function(err, link) {
 
         <tr><td></td></tr><tr><td></td></tr>
         <tr><td></td></tr><tr><td></td></tr>
+        <tr><td><b>Browser User Agent:</b></td></tr>
+        <tr><td><label id="usag"></label> </td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr><td></td></tr><tr><td></td></tr>
+        <tr><td></td></tr><tr><td></td></tr>
+        <tr><td></td></tr><tr><td></td></tr>
+
         <tr><td><b>Uber:</b></td></tr>
         <tr><td><a href='https://twitter.com/tarekdemo2/status/1502002505353359361?s=21'>Uber: URL to Tweet </a></td></tr><tr><td></td></tr><tr><td></td></tr>
         <tr><td><a href='https://www.facebook.com/100036898956808/posts/666494844590475/?d=n'>Uber: URL to Facebook Post</a></td></tr><tr><td></td></tr><tr><td></td></tr>
@@ -214,6 +222,15 @@ branch.link(linkData, function(err, link) {
        
             
 		</div>
-		
+    <script>
+
+
+      console.log("USER AGENT METHOD");
+     let get = navigator.userAgent;
+     console.log(get);
+     document.getElementById("usag").innerHTML=get;
+     
+    
+      </script>
 </body>
 </html>
