@@ -38,7 +38,7 @@
   }
 };
 
-
+branch.ipaddress
 branch.link(linkData, function(err, link) {
   console.log(link);
   if (err)
@@ -95,12 +95,26 @@ branch.link(linkData, function(err, link) {
 	</script>
 	<!-- PageView -->
 	<script>
+//     var event_and_custom_data = {
+//   "report-comment":null,"organization-name":"Branch","app-name":"Device ID Finder","outcome":"FAIL","title":"Branch - Device ID Finder Beta Not Installed (Staging + Deferred Deep Link)","device-model-name":"Google Pixel 6","test-cases":[{"name":"Google Chrome","steps":[{"name":"Launch Google Chrome","result-states":[{"updated-at":"2023-05-16T19:28:16.468Z","outcome":"PASS","comment":null}]},{"name":"Scroll Up","result-states":[{"updated-at":"2023-05-16T19:28:19.776Z","outcome":"PASS","comment":null}]},{"name":"Tap TESTFLIGHT DeviceID Finder (Branch-owned): Branch URL","result-states":[{"updated-at":"2023-05-16T19:28:26.990Z","outcome":"PASS","comment":null}]},{"name":"Install Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:29:22.169Z","outcome":"PASS","comment":null}]},{"name":"Launch Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:38:23.532Z","outcome":"FAIL","comment":"No deep link message appears for Device ID Finder.\nhttps://branch.atlassian.net/browse/MOBOT-8"}]},{"name":"Tap Great!","result-states":[{"updated-at":"2023-05-16T19:38:28.222Z","outcome":"PASS","comment":null}]}]},{"name":"Instagram","steps":[{"name":"Uninstall Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:29:49.421Z","outcome":"PASS","comment":null}]},{"name":"Navigate Back to Chrome","result-states":[{"updated-at":"2023-05-16T19:29:53.521Z","outcome":"PASS","comment":null}]},{"name":"Tap TESTFLIGHT DeviceID Finder (Branch-owned): URL to Instagram Account/Story","result-states":[{"updated-at":"2023-05-16T19:29:59.510Z","outcome":"PASS","comment":null}]},{"name":"Tap View Story","result-states":[{"updated-at":"2023-05-16T19:30:07.331Z","outcome":"PASS","comment":null}]},{"name":"Tap Freedom-External-Services.BranchBeta.Link","result-states":[{"updated-at":"2023-05-16T19:30:14.741Z","outcome":"PASS","comment":null}]},{"name":"Tap Visit Link","result-states":[{"updated-at":"2023-05-16T19:30:27.502Z","outcome":"PASS","comment":null}]},{"name":"Install Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:30:38.557Z","outcome":"PASS","comment":null}]},{"name":"Launch Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:38:34.980Z","outcome":"FAIL","comment":"No deep link message appears for Device ID Finder.\nhttps://branch.atlassian.net/browse/MOBOT-8"}]},{"name":"Tap Great!","result-states":[{"updated-at":"2023-05-16T19:38:37.833Z","outcome":"PASS","comment":null}]}]},{"name":"Facebook","steps":[{"name":"Uninstall Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:30:56.300Z","outcome":"PASS","comment":null}]},{"name":"Navigate Back to Chrome","result-states":[{"updated-at":"2023-05-16T19:31:02.142Z","outcome":"PASS","comment":null}]},{"name":"Tap TESTFLIGHT DeviceID Finder (Branch-owned): URL to Facebook Post","result-states":[{"updated-at":"2023-05-16T19:34:44.650Z","outcome":"PASS","comment":null}]},{"name":"Tap Link Within Post","result-states":[{"updated-at":"2023-05-16T19:39:28.530Z","outcome":"FAIL","comment":"Facebook Quick Link is unresponsive. Unable to proceed. https://branch.atlassian.net/browse/MOBOT-14"}]},{"name":"Install Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:35:55.240Z","outcome":"FAIL","comment":null}]},{"name":"Launch Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:35:57.795Z","outcome":"FAIL","comment":null}]},{"name":"Tap Great!","result-states":[{"updated-at":"2023-05-16T19:36:00.283Z","outcome":"FAIL","comment":null}]}]},{"name":"Twitter","steps":[{"name":"Uninstall Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:39:45.980Z","outcome":"PASS","comment":null}]},{"name":"Navigate Back to Chrome","result-states":[{"updated-at":"2023-05-16T19:36:09.157Z","outcome":"PASS","comment":null}]},{"name":"Tap TESTFLIGHT DeviceID Finder (Branch-owned): URL to Tweet","result-states":[{"updated-at":"2023-05-16T19:36:21.390Z","outcome":"PASS","comment":null}]},{"name":"Tap Link Within Tweet","result-states":[{"updated-at":"2023-05-16T19:36:26.303Z","outcome":"PASS","comment":null}]},{"name":"Install Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:36:39.309Z","outcome":"PASS","comment":null}]},{"name":"Launch Device ID Finder (Staging)","result-states":[{"updated-at":"2023-05-16T19:39:59.027Z","outcome":"FAIL","comment":"No deep link message appears for Device ID Finder.\nhttps://branch.atlassian.net/browse/MOBOT-8"}]},{"name":"Tap Great!","result-states":[{"updated-at":"2023-05-16T19:40:03.228Z","outcome":"PASS","comment":null}]}]}],"os-version":"Android 13.0.0","app-version":"1.5","test-plan-comment":null
+// };
+
+
+
+// branch.logEvent(
+//    "Mobot_Test_Event",
+//    event_and_custom_data,
+//    function(err) { console.log(err); }
+// );
+
+
 	branch.logEvent(
 		"View_links",{},{},"",
 		function(err) {
 			console.log(err);
 		}
 	);
+
  	gtag('event', 'conversion', {'send_to': 'AW-405680301/LSe3CMPcvJADEK3huMEB'});
 	fbq('track', 'PageView');
 	twq('track','PageView');
@@ -114,6 +128,11 @@ branch.link(linkData, function(err, link) {
 
 	<div class="card center"></div>
     <table>
+        <tr><td><b>Browser User Agent:</b></td></tr>
+        <tr><td><label id="usag"></label> </td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr><td><b>IP Address:</b></td></tr>
+        <tr><td><label id="ipaddr"></label> </td></tr><tr><td></td></tr><tr><td></td></tr>
+       
         <tr><td></td></tr><tr><td></td></tr>
         <tr><td></td></tr><tr><td></td></tr>
         <tr><td><b>Device ID Finder Prod:</b></td></tr>
@@ -146,10 +165,7 @@ branch.link(linkData, function(err, link) {
 
         <tr><td></td></tr><tr><td></td></tr>
         <tr><td></td></tr><tr><td></td></tr>
-        <tr><td><b>Browser User Agent:</b></td></tr>
-        <tr><td><label id="usag"></label> </td></tr><tr><td></td></tr><tr><td></td></tr>
-        <tr><td></td></tr><tr><td></td></tr>
-        <tr><td></td></tr><tr><td></td></tr>
+        
         <tr><td></td></tr><tr><td></td></tr>
 
         <tr><td><b>Uber:</b></td></tr>
@@ -230,8 +246,13 @@ branch.link(linkData, function(err, link) {
      let get = navigator.userAgent;
      console.log(get);
      document.getElementById("usag").innerHTML=get;
+     function getIP(json) {
+    // document.write("My public IP address is: ", json.ip);
+    document.getElementById("ipaddr").innerHTML=json.ip;
+  }
      
-    
       </script>
+      <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
 </body>
 </html>
