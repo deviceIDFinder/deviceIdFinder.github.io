@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="facebook-domain-verification" content="18sng67xot9v39jj13hcbag2cq7xtu" />
+  <meta name="google-site-verification" content="psJ8aN0AODh6DldKtuQAUIgqIg3HI0gq-l9jgDjOLmM" />
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Branch Device ID Finder"/>
+	<meta property="og:url" content="https://deviceidfinder.com/mweb"/>
+	<meta property="og:image" content="https://cdn.branch.io/branch-assets/1629833953906-og_image.jpeg"/>
+	<meta property="og:description" content="Get your device ID"/>
+	<meta property="fb:app_id" content="2893625137630351"/>
+	<meta property="al:ios:url" content="bncdeviceid://" />
+	<meta property="al:android:url" content="bncdeviceid://" />
+	<meta name="twitter:image" content="https://cdn.branch.io/branch-assets/1629833953906-og_image.jpeg">
+	<meta name="twitter:description" content="Get your device ID">
+	<meta name="twitter:title" content="Branch Device ID Finder">
+	
+	<title>Branch Device ID Finder</title>
+	<!-- Branch init -->
+	<script>
+	(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking setAPIUrl".split(" "), 0);
+    branch.setAPIUrl("https://protected-api.branch.io");
+    branch.init('key_live_hshD4wiPK2sSxfkZqkH30ggmyBfmGmD7');
+    
+
+  var linkData = {
+  campaign: 'testing_hipaa-mobot_links',
+  channel: 'mobot',
+  feature: 'LinkPage',
+  stage: 'new user',
+  tags: [ 'mobot', 'linkpage', 'test','hipaa' ],
+  alias: '',
+  data: {
+    'custom_bool': true,
+    'custom_int': Date.now(),
+    'custom_string': 'from_mobot_link_page',
+    '$og_title': 'Hipaa quick Link Dynamic',
+    '$og_description': 'Testing for Mobot',
+    "deep_link_message": "Thank you for using the app (Dynamic)",
+  }
+};
+
+branch.ipaddress
+branch.link(linkData, function(err, link) {
+  console.log(link);
+  if (err)
+  {
+    document.getElementById("errlbl").innerText="Error creating Link. Error: "+err;
+    document.getElementById("custom_link").innerHTML='';
+  }
+  else
+  {
+    document.getElementById("custom_link").href = link;
+    document.getElementById("custom_link").innerHTML=link;
+    document.getElementById("errlbl").innerText="Link Created Successfully."
+  }
+ 
+  
+});
+
+	</script>
+	
+<script>
+	branch.logEvent(
+		"View_links",{},{},"",
+		function(err) {
+			console.log(err);
+		}
+	);
+
+	</script>
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	<div class="card center"></div>
+    <table>
+        <tr><td><b>Browser User Agent:</b></td></tr>
+        <tr><td><label id="usag"></label> </td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr><td><b>IP Address:</b></td></tr>
+        <tr><td><label id="ipaddr"></label> </td></tr><tr><td></td></tr><tr><td></td></tr>
+       
+        <tr><td></td></tr><tr><td></td></tr>
+        <tr><td></td></tr><tr><td></td></tr>
+        <tr><td><b>Branch Simulator Quick Link:</b></td></tr>
+        <tr><td><a href='https://branchlinksimulator.app.link/RAQFfvzGxHb'>General Quick Link</a></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr><td><b>Journeys:</b></td></tr>
+        <tr><td><a href='hipaa-journeys.html'>Link to Page with Journeys</a></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr><td><b>QR Code:</b></td></tr>
+        <tr><td><a href='hipaa-mobot_qr_code.jpeg'><img width='25%' height='25%' src='hipaa-mobot_qr_code.jpeg'></a></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr><td><b>Dynamic Link (Created by SDK):</b></td></tr>
+        <tr><td><a href='' id="custom_link">Dynamic Link</a></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr><td><label id="errlbl"></label> </td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr><td></td></tr><tr><td></td></tr>
+        <tr><td></td></tr><tr><td></td></tr>
+
+</table>
+		<div id="content-container"></div>
+       
+            
+		</div>
+    <script>
+
+
+      console.log("USER AGENT METHOD");
+     let get = navigator.userAgent;
+     console.log(get);
+     document.getElementById("usag").innerHTML=get;
+     function getIP(json) {
+    // document.write("My public IP address is: ", json.ip);
+    document.getElementById("ipaddr").innerHTML=json.ip;
+  }
+     
+      </script>
+      <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+</body>
+</html>
