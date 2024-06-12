@@ -41,13 +41,15 @@
 
 
   branch.link(linkData, function(err, link) {
-    console.log(link);
+    console.log("Dynamic Link: "+link);
+    var  dlink=link;
     if (err) {
       document.getElementById("errlbl").innerText = "Error creating Link. Error: " + err;
       document.getElementById("custom_link").innerHTML = '';
     } else {
-      document.getElementById("custom_link").href = link;
-      document.getElementById("custom_link").innerHTML = link;
+      console.log("Dynamic Link no error: "+dlink);
+      document.getElementById("custom_link").href = dlink;
+      document.getElementById("custom_link").innerHTML = dlink;
       document.getElementById("errlbl").innerText = "Link Created Successfully.";
     }
   });
