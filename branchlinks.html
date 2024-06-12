@@ -40,19 +40,7 @@
 };
 
 
-  branch.link(linkData, function(err, link) {
-    console.log("Dynamic Link: "+link);
-    var  dlink=link;
-    if (err) {
-      document.getElementById("errlbl").innerText = "Error creating Link. Error: " + err;
-      document.getElementById("custom_link").innerHTML = '';
-    } else {
-      console.log("Dynamic Link no error: "+dlink);
-      document.getElementById("custom_link").href = dlink;
-      document.getElementById("custom_link").innerHTML = dlink;
-      document.getElementById("errlbl").innerText = "Link Created Successfully.";
-    }
-  });
+  
 } catch (error) {
   console.error("An error occurred:", error);
   document.getElementById("errlbl").innerText = "Error creating Link. Error: " + err;
@@ -268,6 +256,21 @@
     document.getElementById("ipaddr").innerHTML=json.ip;
   }
      
+      </script>
+      <script>
+        branch.link(linkData, function(err, link) {
+    console.log("Dynamic Link: "+link);
+    var  dlink=link;
+    if (err) {
+      document.getElementById("errlbl").innerText = "Error creating Link. Error: " + err;
+      document.getElementById("custom_link").innerHTML = '';
+    } else {
+      console.log("Dynamic Link no error: "+dlink);
+      document.getElementById("custom_link").href = dlink;
+      document.getElementById("custom_link").innerHTML = dlink;
+      document.getElementById("errlbl").innerText = "Link Created Successfully.";
+    }
+  });
       </script>
       <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
